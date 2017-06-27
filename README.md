@@ -19,7 +19,12 @@ Output:
 const expression = _ => _.a + _.b;
 ```
 
-#### Transformer
+### Options
+
+This plugin accepts only one option: `taggedJsFuncName` - name of the
+tag function. The default value is `js`.
+
+### Transformer
 
 It's similar to [transform-dwayne-js](https://github.com/dwaynejs/transform-dwayne-js),
 but for babel and js expressions only.
