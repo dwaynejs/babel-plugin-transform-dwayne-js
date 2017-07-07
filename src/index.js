@@ -1,3 +1,4 @@
+const Path = require('path');
 const _ = require('lodash');
 const transformDwayneJs = require('transform-dwayne-js-expressions');
 const { default: LinesAndColumns } = require('lines-and-columns');
@@ -40,7 +41,7 @@ module.exports = ({ types: t }) => ({
       const lines = __dwayneLines__ || /* istanbul ignore next */ new LinesAndColumns(code);
       const loc = lines.locationForIndex(start + 1);
       const transformerOpts = _.assign({}, options, {
-        filename,
+        filename: Path.relative(process.cwd(), filename),
         startLine: loc.line + 1,
         startColumn: loc.column,
         startPosition: start + 1
